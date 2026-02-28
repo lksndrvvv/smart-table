@@ -52,6 +52,7 @@ function render(action) {
     sampleTable.render(result)
 }
 
+
 const sampleTable = initTable({
     tableTemplate: 'table',
     rowTemplate: 'row',
