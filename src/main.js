@@ -27,10 +27,18 @@ function collectState() { // - сделала
     const rowsPerPage = parseInt(state.rowsPerPage);
     // номер страницы по умолчанию 1 и тоже число
     const page = parseInt(state.page ?? 1);
+
+    // для фильтра Total from/to, так как они строки, а нужны числа
+    const totalFrom = state.totalFrom ? parseFloat(state.totalFrom) : null;
+    const totalTo = state.totalTo ? parseFloat(state.totalTo) : null;
+
     return {
         ...state,
         rowsPerPage,
-        page
+        page,
+        totalFrom,
+        totalTo,
+        total: [totalFrom, totalTo]
     }; 
     
 }
